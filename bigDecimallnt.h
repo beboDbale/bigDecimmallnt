@@ -9,6 +9,6 @@ using namespace std;
 
 class bigDecimalInt{
 
-}
+};
 
 #endif //MAIN_CPP_BIGDECIMALLNT_H
