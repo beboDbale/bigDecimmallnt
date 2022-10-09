@@ -7,8 +7,22 @@
 #include <sstream>
 using namespace std;
 
-class bigDecimalInt{
+class BigDecimalInt {
+private:
+    string number;
+    char sign;
 
+    bool validateNumber(string);
+
+public:
+    BigDecimalInt operator+(BigDecimalInt);
+
+    BigDecimalInt();
+
+    BigDecimalInt(string);
+
+    BigDecimalInt(long long);
 };
 
-#endif //MAIN_CPP_BIGDECIMALLNT_H
+
+#endif
