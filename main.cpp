@@ -8,6 +8,7 @@ int main() {
     BigDecimalInt num1("123456789012345678901234567890");
     BigDecimalInt num2("+113456789011345678901134567890");
     BigDecimalInt num3("-200000000000000000000000000000");
+    BigDecimalInt num9=num3;
     BigDecimalInt num4 = num2 + num1;
     BigDecimalInt num5 = num2 - num1;
     cout << "num1 = " << num1 << endl;
@@ -19,7 +20,7 @@ int main() {
 //Next statement will print 1
     cout << "num2 > num1 = " << (num2 > num1) << endl;
 //Next statement will print 0
-    cout << "num2 = num1 = " << (num2 == num1) << endl;
+    cout << "num2 == num1 = " << (num2 == num1) << endl;
 
 
 

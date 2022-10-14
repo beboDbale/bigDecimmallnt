@@ -7,6 +7,15 @@ using namespace std;
 
 // Private functions
 
+// Getting the size
+
+int BigDecimalInt::size(BigDecimalInt &num){
+    if(num.number[0]=='+' || num.number[0]=='-')
+        return num.number.length()-1;
+    else
+        return num.number.length();
+}
+
 // Check if string is valid or not
 bool BigDecimalInt::validateNumber(string s) {
     for (int i = 0; i < s.size(); ++i) {
@@ -61,7 +70,7 @@ string BigDecimalInt::sum(string number1, string number2) {
 
 // get the difference between 2 numbers (strings)
 string BigDecimalInt::subtract(string number1, string number2) {
-    string result;
+    string result="";
     if (number1.size() < number2.size())swap(number1, number2);
     reverse(number1.begin(), number1.end());
     reverse(number2.begin(), number2.end());
@@ -75,6 +84,7 @@ string BigDecimalInt::subtract(string number1, string number2) {
             carry = 0;
         result.push_back(sub + '0');
     }
+
     for (int i = number2.size(); i < number1.size(); i++) {
         int sub = ((number1[i] - '0') - carry);
         if (sub < 0) {
@@ -240,4 +250,10 @@ string BigDecimalInt::subtract(string number1, string number2) {
         } else return false;
         return true;
     }
+
+    void BigDecimalInt::operator = (const BigDecimalInt &number2){
+        for(int i=0 ; i<number2.number.size();i++){
+            number[i]=number2.number[i];
+        }
+}
 
