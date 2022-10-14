@@ -5,7 +5,7 @@ set(CMAKE_CXX_STANDARD 14)
 
 include_directories(.)
 
-add_executable(bigDecimmallnt
-        bigDecimallnt.h
+add_executable(bigDecimalInt
+        bigDecimalInt.h
         functions.cpp
         main.cpp)

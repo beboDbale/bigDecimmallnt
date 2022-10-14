@@ -1,4 +1,7 @@
-#include "bigDecimmallnt.h"
+#include "bigDecimalInt.h"
+#include <iostream>
+#include <string>
+using namespace std;
 
 
 // Private functions
@@ -84,6 +87,13 @@ BigDecimalInt::BigDecimalInt(long long n) {
 
 // Operators Overloading
 
+ostream& operator << (ostream& out, BigDecimalInt number)
+{
+
+    out << number.sign << number.number;
+    return out;
+}
+
 BigDecimalInt BigDecimalInt::operator+(const BigDecimalInt &anotherDec) {
     BigDecimalInt result;
     // Same sign --> get the sum of the 2 numbers and add sign to the result
@@ -98,6 +108,21 @@ BigDecimalInt BigDecimalInt::operator+(const BigDecimalInt &anotherDec) {
     }
     return result;
 }
+BigDecimalInt BigDecimalInt::operator-(const BigDecimalInt &anotherDec) {
+    BigDecimalInt result;
+    // Same sign --> get the different between the 2 numbers and add sign to the result
+    if (sign == anotherDec.sign) {
+        result.number = subtract(number, anotherDec.number);
+        result.sign = sign;
+    }
+        // different sign --> get the sum of them
+        // and add the sign of the largest number to the result
+    else {
+        result.number = sum(number, anotherDec.number);
+    }
+    return result;
+}
+
 
 
 

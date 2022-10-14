@@ -1,5 +1,5 @@
-#ifndef MAIN_CPP_BIGDECIMMALLNT_H
-#define MAIN_CPP_BIGDECIMMALLNT_H
+#ifndef MAIN_CPP_BIGDECIMALLNT_H
+#define MAIN_CPP_BIGDECIMALLNT_H
 
 #include <iostream>
 #include <string>
@@ -8,6 +8,9 @@
 using namespace std;
 
 class BigDecimalInt {
+
+    friend ostream &operator<<(ostream &, BigDecimalInt);
+
 private:
     string number;
     char sign;
@@ -18,16 +21,19 @@ private:
 
     bool validateNumber(string);
 
+
 public:
     // Constructors
     BigDecimalInt();
 
-    BigDecimalInt(string);
+    BigDecimalInt(string decStr);
 
-    BigDecimalInt(long long);
+    BigDecimalInt(long long decInt);
 
     // Operators Overloading
     BigDecimalInt operator+(const BigDecimalInt &);
+
+    BigDecimalInt operator-(const BigDecimalInt &);
 
 };
 
