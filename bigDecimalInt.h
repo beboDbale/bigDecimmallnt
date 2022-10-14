@@ -21,6 +21,8 @@ private:
 
     bool validateNumber(string);
 
+    int compare(string, string);
+
 
 public:
     // Constructors
