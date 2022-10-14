@@ -163,57 +163,71 @@ string BigDecimalInt::subtract(string number1, string number2) {
     bool operator>(const BigDecimalInt &number1, const BigDecimalInt &number2) {
         if (number1.sign == number2.sign) {
             if (number1.sign == '+') {
-                if (number1.number.size() > number2.number.size())return true;
-                else if (number1.number.size() < number2.number.size())return false;
+                if (number1.number.size() > number2.number.size())
+                    return 1;
+                else if (number1.number.size() > number2.number.size())
+                    return -1;
                 else {
                     for (int i = 0; i < number1.number.size(); ++i) {
-                        if (number1.number[i] > number2.number[i])return true;
-                        else if (number1.number[i] < number2.number[i])return false;
+                        if (number1.number[i] > number2.number[i]) {
+                            return 1;
+                        } else
+                            return -1;
                     }
                 }
             } else {
-                if (number1.number.size() > number2.number.size())return false;
-                else if (number1.number.size() < number2.number.size())return true;
-                else {
+                if (number1.number.size() > number2.number.size()) {
+                    return 1;
+                } else if (number1.number.size() > number2.number.size()) {
+                    return -1;
+                } else {
                     for (int i = 0; i < number1.number.size(); ++i) {
-                        if (number1.number[i] > number2.number[i])return false;
-                        else if (number1.number[i] < number2.number[i])return true;
+                        if (number1.number[i] > number2.number[i]) {
+                            return 1;
+                        } else
+                            return -1;
                     }
                 }
             }
-        } else {
-            if (number1.sign == '-')return false;
-            else return true;
-        }
-        return false;
+        } else if (number1.sign == '-') {
+            return 1;
+        } else
+            return -1;
     }
 
     bool operator<(const BigDecimalInt &number1, const BigDecimalInt &number2) {
         if (number1.sign == number2.sign) {
             if (number1.sign == '+') {
-                if (number1.number.size() > number2.number.size())return false;
-                else if (number1.number.size() < number2.number.size())return true;
+                if (number1.number.size() > number2.number.size())
+                    return -1;
+                else if (number1.number.size() > number2.number.size())
+                    return 1;
                 else {
                     for (int i = 0; i < number1.number.size(); ++i) {
-                        if (number1.number[i] > number2.number[i])return false;
-                        else if (number1.number[i] < number2.number[i])return true;
+                        if (number1.number[i] > number2.number[i]) {
+                            return -1;
+                        } else
+                            return 1;
                     }
                 }
             } else {
-                if (number1.number.size() > number2.number.size())return true;
-                else if (number1.number.size() < number2.number.size())return false;
-                else {
+                if (number1.number.size() > number2.number.size()) {
+                    return 1;
+                } else if (number1.number.size() > number2.number.size()) {
+                    return -1;
+                } else {
                     for (int i = 0; i < number1.number.size(); ++i) {
-                        if (number1.number[i] > number2.number[i])return true;
-                        else if (number1.number[i] < number2.number[i])return false;
+                        if (number1.number[i] > number2.number[i]) {
+                            return 1;
+                        } else
+                            return -1;
                     }
                 }
             }
-        } else {
-            if (number1.sign == '-')return true;
-            else return false;
-        }
-        return false;
+        } else if (number1.sign == '-') {
+            return 1;
+        } else
+            return -1;
     }
     bool operator==(const BigDecimalInt &number1, const BigDecimalInt &number2) {
         if (number1.sign == number2.sign) {
