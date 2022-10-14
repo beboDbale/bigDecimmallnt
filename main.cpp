@@ -1,5 +1,5 @@
 #include <iostream>
-#include "bigDecimallnt.h"
+#include "bigDecimalInt.h"
 
 using namespace std;
 
@@ -16,6 +16,11 @@ int main() {
     cout << "num2 + num1 = " << num4 << endl;
 //Next statement will print -313456789011345678901134567890
     cout << "num2 - num1 = " << num5 << endl;
+//Next statement will print 1
+    cout << "num2 > num1 = " << (num2 > num1) << endl;
+//Next statement will print 0
+    cout << "num2 = num1 = " << (num2 == num1) << endl;
+
 
 
 }

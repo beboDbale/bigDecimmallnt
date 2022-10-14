@@ -9,7 +9,6 @@ using namespace std;
 
 class BigDecimalInt {
 
-    friend ostream &operator<<(ostream &, BigDecimalInt);
 
 private:
     string number;
@@ -37,7 +36,23 @@ public:
 
     BigDecimalInt operator-(const BigDecimalInt &);
 
+    friend bool operator>(const BigDecimalInt &number1, const BigDecimalInt &number2);
+
+    friend bool operator<(const BigDecimalInt &number1, const BigDecimalInt &number2);
+
+    friend bool operator==(const BigDecimalInt &number1, const BigDecimalInt &number2);
+
+    friend ostream &operator<<(ostream &, BigDecimalInt);
+
 };
 
+string sum(string, string);
 
-#endif
+string subtract(string, string);
+
+bool validateNumber(string);
+
+int compare(string, string);
+
+#endif //MAIN_CPP_BIGDECIMALLNT_H
+
