@@ -21,6 +21,8 @@ int main() {
     cout << "num2 > num1 = " << (num2 > num1) << endl;
 //Next statement will print 0
     cout << "num2 == num1 = " << (num2 == num1) << endl;
+//Next statement will print 1
+    cout << "num2 != num1 = " << (num2 != num1) << endl;
 
 
 

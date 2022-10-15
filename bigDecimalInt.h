@@ -44,6 +44,8 @@ public:
 
     friend bool operator==(const BigDecimalInt &number1, const BigDecimalInt &number2);
 
+    friend bool operator!=(const BigDecimalInt &number1, const BigDecimalInt &number2);
+
     friend ostream &operator<<(ostream &, BigDecimalInt);
 
     void operator=(const BigDecimalInt &number2);

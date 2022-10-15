@@ -251,6 +251,18 @@ string BigDecimalInt::subtract(string number1, string number2) {
         return true;
     }
 
+ bool operator!=(const BigDecimalInt &number1, const BigDecimalInt &number2) {
+    if (number1.sign == number2.sign) {
+        if (number1.number.size() != number2.number.size())return true;
+        else {
+            for (int i = 0; i < number1.number.size(); ++i) {
+                if (number1.number[i] != number2.number[i])return true;
+            }
+        }
+    } else return true;
+    return false;
+}
+
     void BigDecimalInt::operator = (const BigDecimalInt &number2){
         for(int i=0 ; i<number2.number.size();i++){
             number[i]=number2.number[i];
