@@ -22,6 +22,12 @@ bool BigDecimalInt::validateNumber(string s) {
     return true;
 }
 
+int BigDecimalInt::compare(string number1, string number2) {
+    if(number1 > number2) return 1;
+    if(number1 < number2) return -1;
+    return 0;
+}
+
 
 // add two numbers (strings)
 string BigDecimalInt::sum(string number1, string number2) {
