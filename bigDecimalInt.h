@@ -44,21 +44,13 @@ public:
 
     friend bool operator==(const BigDecimalInt &number1, const BigDecimalInt &number2);
 
-    friend bool operator!=(const BigDecimalInt &number1, const BigDecimalInt &number2);
+    friend ostream &operator<<(ostream &, const BigDecimalInt&);
 
-    friend ostream &operator<<(ostream &, BigDecimalInt);
-
-    void operator=(const BigDecimalInt &number2);
+    BigDecimalInt operator=(const BigDecimalInt&);
 
 };
 
-string sum(string, string);
-
-string subtract(string, string);
-
-bool validateNumber(string);
-
-int compare(string, string);
 
 
 #endif //MAIN_CPP_BIGDECIMALLNT_H
+
