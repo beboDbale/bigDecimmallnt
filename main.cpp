@@ -1,3 +1,14 @@
+//this project is to do operations on big decimal integers
+//institute: Faculty of Computers And Artificial Intelligence Cairo University
+//course: object oriented programming
+//project name: big decimal integers
+//professor: Dr. Mohamed El-ramly
+//students:
+//1- Belal Ahmed Eid 20210092
+//2- Zeyad Ehab Maamoun El-Naggar 20211043
+//3- Youssef Ahmed Zakaria 20210458
+
+
 #include "functions.cpp"
 
 int main() {

@@ -1,9 +1,9 @@
 #include "bigDecimalInt.h"
 
 
-// Private functions
+//private functions
 
-// Getting the size
+//Getting the size
 int BigDecimalInt::size(BigDecimalInt &num) {
     if (num.number[0] == '+' || num.number[0] == '-')
         return num.number.length() - 1;

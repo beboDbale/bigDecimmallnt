@@ -1,3 +1,4 @@
+
 #ifndef MAIN_CPP_BIGDECIMALLNT_H
 #define MAIN_CPP_BIGDECIMALLNT_H
 
@@ -24,7 +25,7 @@ private:
 
 
 public:
-    // Constructors
+    //Constructors
     BigDecimalInt();
 
     BigDecimalInt(string decStr);
