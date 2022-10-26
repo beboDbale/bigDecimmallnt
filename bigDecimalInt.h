@@ -1,4 +1,3 @@
-
 #ifndef MAIN_CPP_BIGDECIMALLNT_H
 #define MAIN_CPP_BIGDECIMALLNT_H
 
@@ -25,12 +24,14 @@ private:
 
 
 public:
-    //Constructors
+    // Functions
+    int getSize();
+
+    char getSign();
+    // Constructors
     BigDecimalInt();
 
     BigDecimalInt(string decStr);
-
-    int size(BigDecimalInt & );
 
     BigDecimalInt(long long decInt);
 
@@ -49,9 +50,9 @@ public:
 
     BigDecimalInt operator=(const BigDecimalInt&);
 
+    friend string removeLeadingZeros(const string&);
+
 };
-
-
 
 #endif //MAIN_CPP_BIGDECIMALLNT_H
 

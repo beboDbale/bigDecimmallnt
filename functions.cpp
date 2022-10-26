@@ -1,16 +1,16 @@
 #include "bigDecimalInt.h"
 
 
-//private functions
+// Private functions
 
-//Getting the size
-int BigDecimalInt::size(BigDecimalInt &num) {
-    if (num.number[0] == '+' || num.number[0] == '-')
-        return num.number.length() - 1;
-    else
-        return num.number.length();
+// Getting the size
+int BigDecimalInt::getSize() {
+    return (int)number.size();
 }
-
+// getting sign
+char BigDecimalInt::getSign(){
+    return sign;
+}
 // Check if string is valid or not
 bool BigDecimalInt::validateNumber(string s) {
     for (int i = 0; i < s.size(); ++i) {
@@ -94,6 +94,22 @@ string BigDecimalInt::subtract(string number1, string number2) {
 }
 
 
+string removeLeadingZeros(const string& Number) {
+    string res;
+    for (int i = 0; i < Number.length(); i++) {
+        // check the first non-zero character
+        if (Number[i] != '0') {
+            // return the remaining string
+            res = Number.substr(i);
+            return res;
+        }
+    }
+    return "0";
+}
+
+
+
+
 // Constructors
 BigDecimalInt::BigDecimalInt() {
     // Default values
@@ -103,9 +119,9 @@ BigDecimalInt::BigDecimalInt() {
 
 BigDecimalInt::BigDecimalInt(string decStr) {
     // Check Number
-    while (!validateNumber(decStr)) {
+    if(!validateNumber(decStr)) {
         cout << "Invalid input. Please enter valid number.\n";
-        // user should try to enter number again
+        return;
     }
     number = decStr;
     if (isdigit(number[0]))sign = '+';
@@ -113,6 +129,7 @@ BigDecimalInt::BigDecimalInt(string decStr) {
         sign = number[0];
         number.erase(0, 1);
     }
+    number = removeLeadingZeros(number);
 }
 
 BigDecimalInt::BigDecimalInt(long long decInt) {
@@ -120,12 +137,12 @@ BigDecimalInt::BigDecimalInt(long long decInt) {
     else sign = '+';
     number = to_string(abs(decInt));
     if (!isdigit(number[0]))number.erase(0, 1);
+    number = removeLeadingZeros(number);
 }
 
 // Operators Overloading
 
 ostream &operator<<(ostream &out, const BigDecimalInt &number) {
-
     out << number.sign << number.number;
     return out;
 }
@@ -239,4 +256,8 @@ BigDecimalInt BigDecimalInt::operator=(const BigDecimalInt &anotherDec) {
     sign = anotherDec.sign;
     return number;
 }
+
+
+
+
 
